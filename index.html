@@ -2,13 +2,213 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/webprojects/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>project1</title>
-    <script type="module" crossorigin src="/webprojects/assets/index-Cifeimsi.js"></script>
-    <link rel="stylesheet" crossorigin href="/webprojects/assets/index-BMdGTShL.css">
+    <meta name="theme-color" content="#edf2ed" />
+    <title>Web Projects | Interactive Lab</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+        color: #172422;
+        background: #edf2ed;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        --ink: #172422;
+        --muted: #5d6b65;
+        --line: #cbd5cf;
+        --blue: #3159ce;
+        --lime: #d8f274;
+        --coral: #ff745d;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-width: 320px;
+        min-height: 100vh;
+        margin: 0;
+        background-image: linear-gradient(#dfe7e0 1px, transparent 1px), linear-gradient(90deg, #dfe7e0 1px, transparent 1px);
+        background-size: 32px 32px;
+      }
+
+      main {
+        width: min(1040px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 54px 0 72px;
+      }
+
+      .masthead {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .masthead strong {
+        color: var(--ink);
+      }
+
+      header {
+        padding: 42px 0 30px;
+      }
+
+      h1 {
+        max-width: 700px;
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 48px;
+        font-weight: 500;
+        line-height: 1.08;
+      }
+
+      .intro {
+        margin: 14px 0 0;
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .project {
+        display: grid;
+        grid-template-columns: 42px minmax(0, 1fr) 36px;
+        align-items: center;
+        min-height: 94px;
+        gap: 14px;
+        padding: 17px 18px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.82);
+        color: var(--ink);
+        text-decoration: none;
+        transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+      }
+
+      .project:hover,
+      .project:focus-visible {
+        transform: translateY(-2px);
+        border-color: var(--blue);
+        background: #fff;
+        outline: none;
+      }
+
+      .number {
+        display: grid;
+        width: 38px;
+        aspect-ratio: 1;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--lime);
+        color: var(--ink);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .project:nth-child(3n + 2) .number {
+        background: #dbe4ff;
+        color: var(--blue);
+      }
+
+      .project:nth-child(3n) .number {
+        background: #ffe0d9;
+        color: #a93727;
+      }
+
+      .project-name {
+        display: block;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .project-type {
+        display: block;
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .arrow {
+        display: grid;
+        width: 32px;
+        aspect-ratio: 1;
+        place-items: center;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        color: var(--blue);
+        font-size: 18px;
+      }
+
+      footer {
+        margin-top: 28px;
+        padding-top: 15px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      @media (max-width: 640px) {
+        main {
+          width: min(100% - 28px, 480px);
+          padding-top: 28px;
+        }
+
+        header {
+          padding: 34px 0 24px;
+        }
+
+        h1 {
+          font-size: 38px;
+        }
+
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <main>
+      <div class="masthead">
+        <strong>Web Projects</strong>
+        <span>Interactive lab / 2026</span>
+      </div>
+      <header>
+        <h1>Small projects.<br />Ready to explore.</h1>
+        <p class="intro">A collection of web experiments and class projects.</p>
+      </header>
+      <nav class="project-grid" aria-label="Web projects">
+        <a class="project" href="/webprojects/project1/"><span class="number">01</span><span><span class="project-name">Personal Portfolio</span><span class="project-type">React · UI</span></span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="project" href="/webprojects/project2/"><span class="number">02</span><span><span class="project-name">Hobby Cards</span><span class="project-type">React · Components</span></span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="project" href="/webprojects/unit3-project1/"><span class="number">03</span><span><span class="project-name">Unit 3 · Project 1</span><span class="project-type">React · Calculator</span></span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="project" href="/webprojects/unit3-project2/"><span class="number">04</span><span><span class="project-name">Unit 3 · Project 2</span><span class="project-type">React · Web app</span></span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="project" href="/webprojects/unit4-project1/"><span class="number">05</span><span><span class="project-name">Unit 4 · Project 1</span><span class="project-type">React · Web app</span></span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="project" href="/webprojects/unit5-project1/"><span class="number">06</span><span><span class="project-name">Unit 5 · Project 1</span><span class="project-type">React · Web app</span></span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="project" href="/webprojects/unit5-project2/"><span class="number">07</span><span><span class="project-name">Unit 5 · Project 2</span><span class="project-type">React · Web app</span></span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="project" href="/webprojects/counter-app/"><span class="number">08</span><span><span class="project-name">Counter</span><span class="project-type">HTML · JavaScript</span></span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="project" href="/webprojects/student-profile/"><span class="number">09</span><span><span class="project-name">Student Profile</span><span class="project-type">HTML · JavaScript</span></span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="project" href="/webprojects/form-validation/"><span class="number">10</span><span><span class="project-name">Form Validation</span><span class="project-type">HTML · CSS · JavaScript</span></span><span class="arrow" aria-hidden="true">↗</span></a>
+      </nav>
+      <footer>10 deployed projects · GitHub Pages</footer>
+    </main>
   </body>
 </html>
